@@ -145,40 +145,9 @@ def build_banner_svg(theme="dark", dithered_matrix=None):
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w_total} {h_total}" width="{w_total}" height="{h_total}">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap');
-      
-      .mono {{ font-family: 'JetBrains Mono', monospace; }}
-      .sans {{ font-family: 'Plus Jakarta Sans', sans-serif; }}
-      
-      /* Animation keyframes */
-      @keyframes pulseGlow {{
-        0%, 100% {{ opacity: 1; }}
-        50% {{ opacity: 0.4; }}
-      }}
-      
-      @keyframes fadeInScan {{
-        0% {{ opacity: 0; transform: translateY(4px); }}
-        100% {{ opacity: 1; transform: translateY(0); }}
-      }}
-      
-      @keyframes radarSweep {{
-        0% {{ transform: translateY(0); opacity: 0.7; }}
-        50% {{ opacity: 0.2; }}
-        100% {{ transform: translateY(400px); opacity: 0.7; }}
-      }}
-      
-      .live-dot {{ animation: pulseGlow 2s ease-in-out infinite; }}
-      .scan-line {{ animation: radarSweep 8s linear infinite; }}
-      
-      /* Staggered portrait fade-in */
-      .p-group-0 {{ animation: fadeInScan 1.2s ease-out 0.2s both; }}
-      .p-group-1 {{ animation: fadeInScan 1.4s ease-out 0.5s both; }}
-      .p-group-2 {{ animation: fadeInScan 1.6s ease-out 0.8s both; }}
-      .p-group-3 {{ animation: fadeInScan 1.8s ease-out 1.1s both; }}
-      
-      .dot-leader {{
-        stroke-dasharray: 2 6;
-      }}
+      .mono {{ font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }}
+      .sans {{ font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }}
+      .dot-leader {{ stroke-dasharray: 2 6; }}
     </style>
     
     <!-- Linear Gradients -->
@@ -195,7 +164,7 @@ def build_banner_svg(theme="dark", dithered_matrix=None):
     
     <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="{portrait_color}" stop-opacity="0" />
-      <stop offset="50%" stop-color="{portrait_color}" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="{portrait_color}" stop-opacity="0.3" />
       <stop offset="100%" stop-color="{portrait_color}" stop-opacity="0" />
     </linearGradient>
   </defs>
@@ -221,7 +190,9 @@ def build_banner_svg(theme="dark", dithered_matrix=None):
   <g transform="translate(940, 14)">
     <!-- LIVE Status Pill -->
     <rect x="0" y="0" width="84" height="22" rx="11" fill="{panel_bg}" stroke="{border_color}" stroke-width="1" />
-    <circle cx="14" cy="11" r="4.5" fill="{accent_green}" class="live-dot" />
+    <circle cx="14" cy="11" r="4.5" fill="{accent_green}">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite" />
+    </circle>
     <text x="26" y="15" fill="{accent_green}" class="mono" font-size="11" font-weight="700" letter-spacing="1">LIVE</text>
     
     <!-- Handle Pill -->
@@ -247,14 +218,24 @@ def build_banner_svg(theme="dark", dithered_matrix=None):
     <rect x="18" y="48" width="374" height="438" rx="8" fill="{code_bg}" stroke="url(#portraitBorderGrad)" stroke-width="1.5" />
     
     <!-- Radar Sweep Scan Effect -->
-    <rect x="19" y="49" width="372" height="60" fill="url(#scanGrad)" class="scan-line" pointer-events="none" />
+    <rect x="19" y="49" width="372" height="50" fill="url(#scanGrad)" pointer-events="none">
+      <animate attributeName="y" values="49;420;49" dur="7s" repeatCount="indefinite" />
+    </rect>
 
     <!-- Dithered Portrait Dot Layers (Shape Rendering CrispEdges) -->
     <g shape-rendering="crispEdges" fill="{portrait_color}">
-      <path d="{path_groups[0]}" class="p-group-0" />
-      <path d="{path_groups[1]}" class="p-group-1" />
-      <path d="{path_groups[2]}" class="p-group-2" />
-      <path d="{path_groups[3]}" class="p-group-3" />
+      <path d="{path_groups[0]}">
+        <animate attributeName="opacity" values="0;1" dur="0.8s" begin="0.1s" fill="freeze" />
+      </path>
+      <path d="{path_groups[1]}">
+        <animate attributeName="opacity" values="0;1" dur="1.0s" begin="0.3s" fill="freeze" />
+      </path>
+      <path d="{path_groups[2]}">
+        <animate attributeName="opacity" values="0;1" dur="1.2s" begin="0.5s" fill="freeze" />
+      </path>
+      <path d="{path_groups[3]}">
+        <animate attributeName="opacity" values="0;1" dur="1.4s" begin="0.7s" fill="freeze" />
+      </path>
     </g>
 
     <!-- Portrait Status Footer -->

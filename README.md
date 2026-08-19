@@ -1,9 +1,9 @@
 <div align="center">
 
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/light.svg">
-    <img alt="B.V.S. Subrahmanyam Profile Banner" src="assets/dark.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/subbu957/suubu-profile/main/assets/dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/subbu957/suubu-profile/main/assets/light.svg">
+    <img alt="B.V.S. Subrahmanyam Profile Banner" src="https://raw.githubusercontent.com/subbu957/suubu-profile/main/assets/dark.svg" width="100%">
   </picture>
 
   <br><br>
@@ -128,9 +128,9 @@ I am an **Artificial Intelligence & Machine Learning undergraduate student** bas
 ### 🐍 Contribution Graph
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/subbu957/subbu957/output/github-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/subbu957/subbu957/output/github-snake.svg">
-  <img alt="Contribution Snake Animation" src="https://raw.githubusercontent.com/subbu957/subbu957/output/github-snake-dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/subbu957/suubu-profile/output/github-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/subbu957/suubu-profile/output/github-snake.svg">
+  <img alt="Contribution Snake Animation" src="https://raw.githubusercontent.com/subbu957/suubu-profile/output/github-snake-dark.svg" width="100%">
 </picture>
 
 ---
