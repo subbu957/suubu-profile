@@ -135,9 +135,9 @@ def build_banner_svg(theme="dark", dithered_matrix=None):
     code_bg = "#070D18" if is_dark else "#F1F5F9"
     grid_line = "#1E293B" if is_dark else "#E2E8F0"
     
-    # Generate portrait paths (starting at x=50, y=140)
-    portrait_start_x = 50
-    portrait_start_y = 150
+    # Generate portrait paths (starting at x=22, y=52 relative to panel)
+    portrait_start_x = 22
+    portrait_start_y = 52
     dot_size = 1.35
     dot_gap = 1.55
     path_groups = generate_svg_dots(dithered_matrix, portrait_start_x, portrait_start_y, dot_size, dot_gap)
@@ -223,19 +223,11 @@ def build_banner_svg(theme="dark", dithered_matrix=None):
     </rect>
 
     <!-- Dithered Portrait Dot Layers (Shape Rendering CrispEdges) -->
-    <g shape-rendering="crispEdges" fill="{portrait_color}">
-      <path d="{path_groups[0]}">
-        <animate attributeName="opacity" values="0;1" dur="0.8s" begin="0.1s" fill="freeze" />
-      </path>
-      <path d="{path_groups[1]}">
-        <animate attributeName="opacity" values="0;1" dur="1.0s" begin="0.3s" fill="freeze" />
-      </path>
-      <path d="{path_groups[2]}">
-        <animate attributeName="opacity" values="0;1" dur="1.2s" begin="0.5s" fill="freeze" />
-      </path>
-      <path d="{path_groups[3]}">
-        <animate attributeName="opacity" values="0;1" dur="1.4s" begin="0.7s" fill="freeze" />
-      </path>
+    <g shape-rendering="crispEdges" fill="{portrait_color}" opacity="1">
+      <path d="{path_groups[0]}" opacity="1" />
+      <path d="{path_groups[1]}" opacity="1" />
+      <path d="{path_groups[2]}" opacity="1" />
+      <path d="{path_groups[3]}" opacity="1" />
     </g>
 
     <!-- Portrait Status Footer -->

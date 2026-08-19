@@ -1,10 +1,19 @@
 <div align="center">
 
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/subbu957/suubu-profile/main/assets/dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/subbu957/suubu-profile/main/assets/light.svg">
-    <img alt="B.V.S. Subrahmanyam Profile Banner" src="https://raw.githubusercontent.com/subbu957/suubu-profile/main/assets/dark.svg" width="100%">
-  </picture>
+  <a href="https://github.com/subbu957">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/subbu957/suubu-profile/main/assets/dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/subbu957/suubu-profile/main/assets/light.svg">
+      <img alt="B.V.S. Subrahmanyam Profile Banner" src="https://raw.githubusercontent.com/subbu957/suubu-profile/main/assets/dark.svg" width="100%">
+    </picture>
+  </a>
+
+  <br><br>
+
+  <!-- Interactive 3D Matrix & Voxel Building Blocks Live Trigger -->
+  <a href="https://htmlpreview.github.io/?https://github.com/subbu957/suubu-profile/blob/main/matrix_portrait.html" target="_blank">
+    <img src="https://img.shields.io/badge/🎮_CLICK_FOR_INTERACTIVE_3D_BUILDING_BLOCKS_VIEWER-22D3EE?style=for-the-badge&logo=react&logoColor=black" alt="Interactive 3D Voxel Portrait" />
+  </a>
 
   <br><br>
 
